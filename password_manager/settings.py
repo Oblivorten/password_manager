@@ -25,6 +25,7 @@ SECRET_KEY = 'django-insecure-c#ykv#r5jfg8gm1b6j-r++ii6o5kr(i^ja56c=a3^3met52^a*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = []
 
 
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'passwords.apps.PasswordsConfig',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +123,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
