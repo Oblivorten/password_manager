@@ -1,0 +1,29 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Менеджер паролей{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'password_list' %}">Мои пароли</a></li>
+                <li><a href="{% url 'add_password' %}">Добавить пароль</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>{% block header %}Добро пожаловать в Менеджер паролей{% endblock %}</h1>
+
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>
