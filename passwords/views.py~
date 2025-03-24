@@ -2,8 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import UserRegistrationForm
 from .models import Password
 from .forms import PasswordForm
-import random
-import string
+from .utils import generate_random_password
 
 
 def register(request):
@@ -31,11 +30,6 @@ def password_add(request):
     else:
         form = PasswordForm()
     return render(request, 'passwords/password_form.html', {'form': form})
-
-
-def generate_random_password(length=12):
-    characters = string.ascii_letters + string.digits + string.punctuation
-    return ''.join(random.choice(characters) for i in range(length))
 
 
 def generate_random_password_view(request):
