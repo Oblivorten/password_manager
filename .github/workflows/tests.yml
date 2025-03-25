@@ -7,8 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
     - name: Set up Python 3.10
       uses: actions/setup-python@v4
@@ -34,5 +33,3 @@ jobs:
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
-      with:
-        fail_ci_if_error: true

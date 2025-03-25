@@ -124,7 +124,15 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-if os.getenv('GITHUB_ACTIONS'):
-    DATABASES['default']['TEST'] = {
-        'NAME': os.path.join(BASE_DIR, 'db_test.sqlite3'),
+if 'GITHUB_ACTIONS' in os.environ:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'github_actions',
+            'USER': 'postgres',
+            'PASSWORD': 'postgres',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
     }
+
