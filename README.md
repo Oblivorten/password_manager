@@ -1,4 +1,8 @@
 # password_manager
+
+![Tests](https://github.com/Oblivorten/password_manager/actions/workflows/tests.yml/badge.svg)
+![Coverage](https://img.shields.io/badge/coverage-50%25-yellow)
+
 Хранилище паролей
 
 Этот проект представляет собой менеджер паролей, разработанный с использованием Django. Он позволяет пользователям хранить и управлять своими паролями для различных сайтов, добавлять новые пароли, редактировать их и удалять. Также предусмотрена возможность случайной генерации пароля.
