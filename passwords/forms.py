@@ -17,9 +17,14 @@ class PasswordForm(forms.ModelForm):
         model = Password
         fields = ['site', 'username', 'password']
 
+    def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)
+        super().__init__(*args, **kwargs)
+
     def save(self, commit=True):
         password = super().save(commit=False)
-        password.user = self.instance.user  # привязываем к текущему пользователю
+        if self.user:
+            password.user = self.user
         if commit:
             password.save()
         return password
